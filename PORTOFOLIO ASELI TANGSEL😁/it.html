@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultra Minimalist White & Black-Orange</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --color-primary: #ff5e00; /* Oranye Tajam */
+        --color-secondary: #000000; /* Hitam Murni */
+      }
+      /* --- PENYESUAIAN WARNA DAN FONT SECARA GLOBAL (Minimalis Elegan) --- */
+      :root {
+        --primary-color: #ff6a34; /* Coral Elegance */
+        --accent-glow: 0 0 15px var(--primary-color);
+        --bg-main: #fcfcfc;
+      }
+
+      body {
+        font-family: "Noto Sans", sans-serif;
+      }
+      .oswald {
+        font-family: "Oswald", sans-serif;
+      }
+
+      body {
+        /* Background Putih Murni */
+        background-color: #ffffff;
+        color: var(--color-secondary);
+        font-family: "Noto Sans JP", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      /* Card styles: Super Bersih */
+      .card {
+        background-color: #ffffff; /* Putih */
+        border: 1px solid #e5e7eb; /* Garis tipis, hampir tidak terlihat */
+        border-radius: 0; /* Sudut tajam/tanpa radius */
+        /* HILANGKAN SEMUA SHADOW */
+        box-shadow: none;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+      }
+
+      /* Hover Minimalis: Hanya perubahan warna border */
+      .card:hover {
+        transform: none; /* Hilangkan efek terangkat */
+        border-color: var(--color-primary); /* Border berubah menjadi Oranye */
+      }
+
+      /* Area Media */
+      .media-area {
+        height: 180px;
+        background-color: #f3f4f6; /* Abu-abu sangat terang */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-text-dark);
+        font-weight: 500;
+        overflow: hidden;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .title-oswald {
+        font-family: "Oswald", sans-serif;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+      }
+      .subtitle-noto {
+        font-family: "Noto Sans JP", sans-serif;
+        font-weight: 400;
+      }
+
+      /* Garis bawah oranye pada judul */
+      .title-underline {
+        position: relative;
+        display: inline-block;
+      }
+      .title-underline::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        height: 3px;
+        width: 60%; /* Hanya sebagian lebar */
+        background: var(--color-primary);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="fixed top-0 left-0 w-full p-4 z-50">
+      <div class="flex justify-end items-center w-full">
+        <button id="menu-btn" class="flex flex-col gap-1.5 md:hidden">
+          <span class="w-6 h-[2px] bg-black block transition-all"></span>
+          <span class="w-6 h-[2px] bg-black block transition-all"></span>
+          <span class="w-6 h-[2px] bg-black block transition-all"></span>
+        </button>
+
+        <nav id="menu" class="hidden md:block absolute md:static top-16 right-4 w-[80%] md:w-auto p-4 md:p-0 rounded-md md:rounded-none md:shadow-none">
+          <ul class="flex md:flex-row flex-col gap-6 items-start">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html">ABOUT</a></li>
+            <li><a href="index.html">SKILL</a></li>
+            <li><a href="index.html">PROJECT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <header class="text-center mb-16 max-w-xl mt-5">
+      <h1 class="text-5xl md:text-6xl font-bold title-oswald mb-3">PROJECTS <span style="color: var(--color-primary)">LIST</span></h1>
+      <p class="text-lg subtitle-noto text-gray-500">Fokus pada fungsi. Desain yang bersih, tanpa gangguan.</p>
+    </header>
+
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <a href="#" class="block group">
+        <div class="card w-full">
+          <div class="media-area"><img src="img/70ca4698-eeda-409a-9a99-6dc43a3ed383.jpg" alt="" /></div>
+          <div class="p-6">
+            <h2 class="text-2xl title-oswald mb-4 title-underline" style="color: var(--color-secondary)">JADWAL SHOLAT</h2>
+            <p class="subtitle-noto text-gray-600 text-sm mb-4">Jadwal sholat sederhana dengan python3, untuk mengakses jadwal sholat sesuai nama kota dan tanggal.</p>
+
+            <div class="flex flex-wrap gap-2 text-xs mt-4">
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 subtitle-noto">PYTHON 3</span>
+              <span class="px-3 py-1 text-white subtitle-noto" style="background-color: var(--color-primary)">Json api</span>
+            </div>
+
+            <div class="flex items-center justify-end mt-6">
+              <span class="text-sm subtitle-noto transition-colors duration-200" style="color: var(--color-primary)">Lihat Detail</span>
+              <svg class="w-4 h-4 ml-2 transition-colors duration-200" style="color: var(--color-primary)" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="block group">
+        <div class="card w-full">
+          <div class="media-area">
+            <img src="img/wwang_040522_102.jpg" alt="" />
+          </div>
+          <div class="p-6">
+            <h2 class="text-2xl title-oswald mb-4 title-underline" style="color: var(--color-secondary)">BCA DIGITAL - SLCING WEB</h2>
+            <p class="subtitle-noto text-gray-600 text-sm mb-4">Proses 1 pekan kurang lebih, responsive, dibuat semirip mungkin.</p>
+
+            <div class="flex flex-wrap gap-2 text-xs mt-4">
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 subtitle-noto">html, css, js</span>
+              <span class="px-3 py-1 text-white subtitle-noto" style="background-color: var(--color-primary)">Design UI/UX</span>
+            </div>
+
+            <div class="flex items-center justify-end mt-6">
+              <span class="text-sm subtitle-noto transition-colors duration-200" style="color: var(--color-primary)">Lihat web nya</span>
+              <svg class="w-4 h-4 ml-2 transition-colors duration-200" style="color: var(--color-primary)" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <footer class="bg-black text-gray-300 py-20 border-t-8 mt-12 border-[var(--primary-color)] shadow-[0_-5px_20px_rgba(255,127,80,0.3)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-[var(--primary-color)]/30 pb-10 mb-10">
+          <div>
+            <h3 class="text-4xl font-extrabold tracking-widest text-[var(--primary-color)] mb-4 oswald">PORTOFOLIO</h3>
+            <p class="text-sm italic mb-4 text-gray-400">"Fokus pada pembuatan web dengan UI/UX super minimalist, dan banyak nya ruang kosong yang menggambarkan ke tenangan dan kesederhanaan."</p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-[var(--primary-color)] hover:text-white transition duration-300">
+                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.564-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="text-[var(--primary-color)] hover:text-white transition duration-300">
+                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-4 border-b border-[var(--primary-color)] pb-2">Contact with me</h4>
+            <p><a class="hover:text-[var(--primary-color)] transition-all 1s ease-in-out" href="https://www.instagram.com/b_dullsc/" target="_blank">instagram @b_dullsc</a></p>
+            <p><a class="hover:text-[var(--primary-color)] transition-all 1s ease-in-out" href="mailto:abdul.prime.id@gmail.com">Gmail abdul.prime.id@gmail.com</a></p>
+            <p><a class="hover:text-[var(--primary-color)] transition-all 1s ease-in-out" href="tel:+62895402649662">WhatsApp +62895402649662</a></p>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-4 border-b border-[var(--primary-color)] pb-2">SEKOLAH</h4>
+            <address class="not-italic space-y-3 text-sm">
+              <div class="flex items-start">
+                <svg class="w-5 h-5 mr-3 mt-1 text-[var(--primary-color)] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+                <p class="text-gray-400">SMA TI HSI-IDN Purworejo, 72WF+64Q, Krajan, Purworejo, Kec. Purworejo, Kabupaten Purworejo, Jawa Tengah</p>
+              </div>
+            </address>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-10">
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">NAVIGASI</h4>
+            <ul class="space-y-3 text-sm">
+              <li><a href="#" class="hover:text-[var(--primary-color)] transition">HOME</a></li>
+              <li><a href="#" class="hover:text-[var(--primary-color)] transition">ABOUT</a></li>
+              <li><a href="#" class="hover:text-[var(--primary-color)] transition">SKILL</a></li>
+              <li><a href="#" class="hover:text-[var(--primary-color)] transition">PROJECT</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">GURU & MENTOR</h4>
+            <ul class="space-y-3 text-sm">
+              <li><a href="#" class="hover:text-[var(--primary-color)] transition">Andy Nur</a></li>
+              <li><a href="#" class="hover:text-[var(--primary-color)] transition">Muhammad hamka</a></li>
+              <li><a href="#" class="hover:text-[var(--primary-color)] transition">Daffa fawwaz</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">INSPIRASI</h4>
+            <ul class="space-y-3 text-sm">
+              <li><a href="https://www.cristianoronaldo.com/#cr7" target="_blank" class="hover:text-[var(--primary-color)] transition">CR7</a></li>
+              <li><a href="https://kuon-yagi-portfolio.netlify.app/#reile" target="_blank" class="hover:text-[var(--primary-color)] transition">Kuon yagi</a></li>
+              <li><a href="https://www.byexperience.co.uk/" class="hover:text-[var(--primary-color)] transition">BY EXPERIENCE</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-gray-700">
+          <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+            <p class="order-2 md:order-1 mt-4 md:mt-0">&copy; ABDULLOH | <span class="text-[var(--primary-color)] font-medium">PORTOFOLIO.</span></p>
+
+            <div class="flex space-x-2 items-center order-1 md:order-2">
+              <span class="font-medium text-white">Pembayaran Aman:</span>
+              <div class="bg-gray-800 p-1 rounded text-[var(--primary-color)] font-bold border border-[var(--primary-color)]">VISA</div>
+              <div class="bg-gray-800 p-1 rounded text-[var(--primary-color)] font-bold border border-[var(--primary-color)]">MC</div>
+              <div class="bg-gray-800 p-1 rounded text-[var(--primary-color)] font-bold border border-[var(--primary-color)]">AMEX</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -11,6 +11,9 @@
       href="https://fonts.googleapis.com/css2?family=Kumar+One+Outline&family=Londrina+Outline&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css" />
+    <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
+
     <style>
       /* --- PENYESUAIAN WARNA DAN FONT SECARA GLOBAL (Minimalis Elegan) --- */
       :root {
@@ -21,15 +24,13 @@
 
       html,
       body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
         scroll-behavior: smooth;
-        width: 100%;
-        overflow-x: hidden;
-        background-color: var(--bg-main);
-        color: #333;
-      }
-      body {
         font-family: "Noto Sans", sans-serif;
       }
+
       .oswald {
         font-family: "Oswald", sans-serif;
       }
@@ -38,7 +39,6 @@
       nav a {
         position: relative;
         font-weight: 500;
-        color: #333;
         padding-bottom: 5px;
       }
       nav a::after {
@@ -112,29 +112,14 @@
         z-index: 5;
       }
 
+      section {
+        height: 100vh;
+        width: 100%;
+      }
       /* Dekorasi untuk Skill Bar - Lebih Penuh dan Ramai */
       .skill-bar-fill {
         box-shadow: 0 0 10px rgba(80, 255, 243, 0.8);
         background: linear-gradient(90deg, #ff8c00, var(--primary-color));
-      }
-
-      /* Animasi untuk dekorasi latar belakang (Menambah kesan HD/Unik) */
-      @keyframes spin {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      @keyframes reverseSpin {
-        from {
-          transform: rotate(360deg);
-        }
-        to {
-          transform: rotate(0deg);
-        }
       }
     </style>
   </head>
@@ -149,16 +134,17 @@
 
         <nav id="menu" class="hidden md:block absolute md:static top-16 right-4 w-[80%] md:w-auto p-4 md:p-0 rounded-md md:rounded-none md:shadow-none">
           <ul class="flex md:flex-row flex-col gap-6 items-start">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#skill">SKILL</a></li>
-            <li><a href="#project">PROJECT</a></li>
+            <li><a class="text-black" href="#home">HOME</a></li>
+            <li><a class="text-black" href="#about">ABOUT</a></li>
+            <li><a class="text-black" href="#skill">SKILL</a></li>
+            <li><a class="text-black" href="#project">PROJECT</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main>
+    <div id="fullpage">
+      <!-- hme -->
       <section id="home" class="flex h-screen justify-center items-center px-4 sm:px-8 md:px-16">
         <div class="font-[oswald] text-7xl sm:text-6xl md:text-9xl text-center font-extrabold tracking-tighter">
           <h1 class="text-[var(--primary-color)] mb-6 text-opacity-90 text-7xl md:text-[160px]">MINIMALIST UI/UX</h1>
@@ -171,11 +157,12 @@
             PROGRAMMER
           </h1>
           <div class="text-lg sm:text-xl tracking-wider font-normal pt-5 text-gray-700">
-            <h1>Saya **ABDULLOH**, pelajar & programmer, fokus pada minimalist ui/ux.</h1>
+            <h1>Saya **ABDULLOH**, pelajar & programmer Amatir, fokus pada pembuatan web minimalist ui/ux.</h1>
           </div>
         </div>
       </section>
 
+      <!-- about -->
       <section id="about" class="h-screen flex justify-center items-center px-4 sm:px-8">
         <div class="text-4xl sm:text-5xl md:text-6xl font-[oswald] font-bold text-center cursor-pointer transition-all duration-300 hover:scale-105 hover:text-gray-900" id="open-about">
           <h1>ABOUT <span class="text-[var(--primary-color)]">ME.•𐃷•</span></h1>
@@ -210,7 +197,8 @@
         </div>
       </div>
 
-      <section id="skill" class="h-screen flex justify-center items-center px-4 sm:px-8">
+      <!-- skill -->
+      <section id="skill" class="section flex justify-center items-center px-4 sm:px-8">
         <div id="open-skill" class="font-bold text-center cursor-pointer text-4xl sm:text-5xl md:text-6xl transition-all duration-300 hover:scale-105 hover:text-gray-900">
           <h1>MY <span class="text-[var(--primary-color)]">SKILL.♨</span></h1>
           <p class="text-xs text-gray-700 font-thin">**klik tulisannya**</p>
@@ -291,6 +279,7 @@
         </div>
       </div>
 
+      <!-- project -->
       <section id="project" class="h-screen flex justify-center items-center px-4 sm:px-8 relative">
         <div class="text-center cursor-pointer transition-all duration-300 hover:scale-105 hover:text-gray-900" onclick="openCard()">
           <h1 class="text-4xl sm:text-5xl md:text-6xl font-[oswald] font-bold">MY PRO<span class="text-[var(--primary-color)]">JETS.🖳</span></h1>
@@ -327,7 +316,8 @@
         </div>
       </div>
 
-      <footer class="bg-black text-gray-300 py-20 border-t-8 border-[var(--primary-color)] shadow-[0_-5px_20px_rgba(255,127,80,0.3)]">
+      <!-- footer berkedok section -->
+      <section class="bg-black text-gray-300 py-20 border-t-8 border-[var(--primary-color)] shadow-[0_-5px_20px_rgba(255,127,80,0.3)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-[var(--primary-color)]/30 pb-10 mb-10">
             <div>
@@ -342,7 +332,7 @@
               <h4 class="text-xl font-semibold text-white mb-4 border-b border-[var(--primary-color)] pb-2">Contact with me</h4>
               <p><a class="hover:text-[var(--primary-color)] transition-all 1s ease-in-out" href="https://www.instagram.com/b_dullsc/" target="_blank">instagram @b_dullsc</a></p>
               <p><a class="hover:text-[var(--primary-color)] transition-all 1s ease-in-out" href="mailto:abdul.prime.id@gmail.com">Gmail abdul.prime.id@gmail.com</a></p>
-              <p><a class="hover:text-[var(--primary-color)] transition-all 1s ease-in-out" href="tel:+62895402649662">WhatsApp +62895402649662</a></p>
+              <p><a class="hover:text-[var(--primary-color)] transition-all 1s ease-in-out" href="tel:+62895402649662" target="_blank">WhatsApp +62895402649662</a></p>
             </div>
 
             <div>
@@ -362,10 +352,10 @@
             <div>
               <h4 class="text-lg font-semibold text-white mb-4">NAVIGASI</h4>
               <ul class="space-y-3 text-sm">
-                <li><a href="#" class="hover:text-[var(--primary-color)] transition">HOME</a></li>
-                <li><a href="#" class="hover:text-[var(--primary-color)] transition">ABOUT</a></li>
-                <li><a href="#" class="hover:text-[var(--primary-color)] transition">SKILL</a></li>
-                <li><a href="#" class="hover:text-[var(--primary-color)] transition">PROJECT</a></li>
+                <li><a href="#home" class="hover:text-[var(--primary-color)] transition">HOME</a></li>
+                <li><a href="#about" class="hover:text-[var(--primary-color)] transition">ABOUT</a></li>
+                <li><a href="#skill" class="hover:text-[var(--primary-color)] transition">SKILL</a></li>
+                <li><a href="#project" class="hover:text-[var(--primary-color)] transition">PROJECT</a></li>
               </ul>
             </div>
 
@@ -393,15 +383,15 @@
             </div>
           </div>
 
-          <div class="pt-8 border-t border-gray-700">
-            <div class="flex flex-col justify-center items-center mt-26 text-xs text-gray-400">
+          <div class="border-t border-gray-700">
+            <div class="flex flex-col justify-center items-center mt-16 text-xs text-gray-400">
               <p class="order-2 md:order-1 mt-10 md:mt-0">&copy; ABDULLOH | <span class="text-[var(--primary-color)] font-medium">PORTOFOLIO.</span></p>
               <div class="">꧁⎝ 𓆩༺✧༻𓆪 ⎠꧂</div>
             </div>
           </div>
         </div>
-      </footer>
-    </main>
+      </section>
+    </div>
 
     <script>
       const openBtn = document.getElementById("open-about");
@@ -410,11 +400,13 @@
       const closeBtn = document.getElementById("close-about");
 
       openBtn.addEventListener("click", () => {
+        modalActive = true;
         modal.classList.remove("opacity-0", "pointer-events-none");
         card.classList.remove("scale-90");
       });
 
       closeBtn.addEventListener("click", () => {
+        modalActive = false;
         modal.classList.add("opacity-0", "pointer-events-none");
         card.classList.add("scale-90");
       });
@@ -434,11 +426,13 @@
       const closeSkill = document.getElementById("close-skill");
 
       openSkill.addEventListener("click", () => {
+        modalActive = true;
         skillModal.classList.remove("opacity-0", "pointer-events-none");
         skillCard.classList.remove("scale-90");
       });
 
       closeSkill.addEventListener("click", () => {
+        modalActive = false;
         skillModal.classList.add("opacity-0", "pointer-events-none");
         skillCard.classList.add("scale-90");
       });
@@ -451,24 +445,24 @@
       });
     </script>
 
+    <!-- kuon yagi effect -->
+
     <script>
       function openCard() {
+        modalActive = true;
         const modal = document.getElementById("projectCard");
         const inner = document.querySelector(".card-inner");
         modal.classList.remove("pointer-events-none", "opacity-0");
         inner.classList.remove("scale-75");
-        inner.classList.add("scale-100");
       }
 
       function closeCard() {
+        modalActive = false;
         const modal = document.getElementById("projectCard");
         const inner = document.querySelector(".card-inner");
-        inner.classList.remove("scale-100");
         inner.classList.add("scale-75");
         modal.classList.add("opacity-0");
-        setTimeout(() => {
-          modal.classList.add("pointer-events-none");
-        }, 300);
+        setTimeout(() => modal.classList.add("pointer-events-none"), 300);
       }
     </script>
 
